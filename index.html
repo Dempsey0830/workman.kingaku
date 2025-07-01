@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1870円</title>
+    <!-- Tailwind CSS CDNを読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* フォントをInterに設定（Tailwindのデフォルトフォントとしてもよく使われます） */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* レインボーカラーアニメーションのキーフレームを定義 */
+        @keyframes rainbow {
+            0% { color: #FF0000; } /* 赤 */
+            14% { color: #FF7F00; } /* オレンジ */
+            28% { color: #FFFF00; } /* 黄色 */
+            42% { color: #00FF00; } /* 緑 */
+            56% { color: #0000FF; } /* 青 */
+            70% { color: #4B0082; } /* 藍色 */
+            84% { color: #9400D3; } /* 紫 */
+            100% { color: #FF0000; } /* 赤に戻る */
+        }
+
+        /* h1要素にレインボーアニメーションを適用 */
+        .rainbow-text {
+            animation: rainbow 1s infinite linear; /* 1秒で無限ループ、線形に高速化 */
+        }
+
+        /* 文字をさらに大きくするためのカスタムスタイル */
+        .super-large-text {
+            font-size: 15rem; /* 非常に大きなフォントサイズを設定 */
+            line-height: 1; /* 行の高さを調整して、文字が重ならないようにする */
+        }
+
+        /* レスポンシブ対応：小さい画面では少し小さくする */
+        @media (max-width: 640px) { /* smブレークポイント以下 */
+            .super-large-text {
+                font-size: 10rem; /* スマートフォン向けに調整 */
+            }
+        }
+        @media (max-width: 480px) { /* さらに小さい画面向け */
+            .super-large-text {
+                font-size: 7rem; /* さらに小さくして画面に収める */
+            }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-400 to-purple-600 text-white p-4">
+    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out border border-white border-opacity-30 flex flex-col items-center">
+        <h1 id="priceDisplay" class="font-extrabold text-center drop-shadow-lg rainbow-text super-large-text">
+            1870円
+        </h1>
+    </div>
+</body>
+</html>
